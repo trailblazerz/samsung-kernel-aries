@@ -1,4 +1,6 @@
 #!/bin/bash
+# CM9 repo path :
+ANDROID_BUILD_TOP=~/CM9
 
 setup ()
 {
@@ -55,6 +57,7 @@ build ()
     for module in "${MODULES[@]}" ; do
         cp "$target_dir/$module" $ANDROID_BUILD_TOP/device/samsung/$target
     done
+	$ANDROID_BUILD_TOP/device/samsung/aries-common/mkshbootimg.py $KERNEL_DIR/release/boot.img "$target_dir"/arch/arm/boot/zImage $ANDROID_BUILD_TOP/out/target/product/$target/ramdisk.img $ANDROID_BUILD_TOP/out/target/product/$target/ramdisk-recovery.img
 }
     
 setup
