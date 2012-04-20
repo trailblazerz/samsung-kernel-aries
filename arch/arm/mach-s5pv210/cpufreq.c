@@ -145,7 +145,7 @@ static u32 clkdiv_val[5][11] = {
 	{1, 3, 1, 1, 3, 1, 4, 1, 3, 0, 0},
 
 	/* L3 : [200/200/100][166/83][133/66][200/200] */
-	{3, 3, 1, 1, 3, 1, 4, 1, 3, 0, 0},
+	{3, 3, 0, 1, 3, 1, 4, 1, 3, 0, 0},
 
 	/* L4 : [100/100/100][83/83][66/66][100/100] */
 	{7, 7, 0, 0, 7, 0, 9, 0, 7, 0, 0},
@@ -353,6 +353,8 @@ static int s5pv210_target(struct cpufreq_policy *policy,
 
 	/* Check if there need to change PLL */
 	if ((index == L0) || (priv_index == L0))
+		pll_changing = 1;
+	else if ((index == L1) || (priv_index == L1))   // 800MHz
 		pll_changing = 1;
 
 	/* Check if there need to change System bus clock */
@@ -849,6 +851,12 @@ unsigned long get_cpuL1freq(void)
 }
 EXPORT_SYMBOL(get_cpuL1freq);
 
+unsigned long get_cpuL0freq(void)
+{
+    return s5pv210_freq_table[L0].frequency;
+}
+EXPORT_SYMBOL(get_cpuL0freq);
+
 static int __init s5pv210_cpu_init(struct cpufreq_policy *policy)
 {
 	unsigned long mem_type;
@@ -895,7 +903,7 @@ static int __init s5pv210_cpu_init(struct cpufreq_policy *policy)
 
 	cpufreq_frequency_table_get_attr(s5pv210_freq_table, policy->cpu);
 
-	policy->cpuinfo.transition_latency = 10000;
+	policy->cpuinfo.transition_latency = 20000;
 
 #ifdef CONFIG_DVFS_LIMIT
 	int i;
