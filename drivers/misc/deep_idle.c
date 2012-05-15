@@ -221,7 +221,7 @@ EXPORT_SYMBOL(deepidle_is_enabled);
 
 bool dstats_is_enabled(void)
 {
-    return true;
+    return dstats_enabled;
 }
 EXPORT_SYMBOL(dstats_is_enabled);
 
