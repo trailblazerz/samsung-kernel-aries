@@ -1,7 +1,7 @@
 #!/bin/bash
 # CM9 repo path :
 ANDROID_BUILD_TOP=~/CM9
-sema_ver="Semaphore_ICS_1.1.1sbm_Vibrant"
+sema_ver="Semaphore_ICS_1.2.0s_Vibrant_CFS"
 export LOCALVERSION="-"`echo $sema_ver`
 
 setup ()
