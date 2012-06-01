@@ -523,7 +523,9 @@ static void dhd_set_packet_filter(int value, dhd_pub_t *dhd)
 #if defined(CONFIG_HAS_EARLYSUSPEND)
 static int dhd_set_suspend(int value, dhd_pub_t *dhd)
 {
-#ifndef CONFIG_MACH_ARIES
+#ifndef CONFIG_BCMDHD_PMFAST
+	int power_mode = PM_FAST;
+#else
 	int power_mode = PM_MAX;
 #endif
 	/* wl_pkt_filter_enable_t	enable_parm; */
