@@ -10,19 +10,24 @@
 #include <linux/kobject.h>
 #include <linux/sysfs.h>
 
-extern bool bigmem;
+extern bool req_recovery;
+extern void request_recovery(void);
 
 /* sysfs interface */
 static ssize_t enable_show(struct kobject *kobj, struct kobj_attribute *attr, char *buf)
 {
-	return sprintf(buf, "%d\n", bigmem?1:0);
+	return sprintf(buf, "%d\n", req_recovery?1:0);
 }
 
 static ssize_t enable_store(struct kobject *kobj, struct kobj_attribute *attr, const char *buf, size_t count)
 {
 	int input;
 	sscanf(buf, "%du", &input);
-	bigmem = input;
+	req_recovery = input;
+	
+	if (req_recovery)
+		request_recovery();
+	
 	return count;
 }
 
@@ -40,11 +45,11 @@ static struct attribute_group attr_group = {
 
 static struct kobject *enable_kobj;
 
-static int __init bigmem_init(void)
+static int __init req_recovery_init(void)
 {
 	int retval;
 
-        enable_kobj = kobject_create_and_add("bigmem", kernel_kobj);
+        enable_kobj = kobject_create_and_add("req_recovery", kernel_kobj);
         if (!enable_kobj) {
                 return -ENOMEM;
         }
@@ -55,14 +60,14 @@ static int __init bigmem_init(void)
 }
 /* end sysfs interface */
 
-static void __exit bigmem_exit(void)
+static void __exit req_recovery_exit(void)
 {
 	kobject_put(enable_kobj);
 }
 
 MODULE_AUTHOR("stratosk <stratosk@semaphore.gr>");
-MODULE_DESCRIPTION("Bigmem");
+MODULE_DESCRIPTION("Request Recovery");
 MODULE_LICENSE("GPL");
 
-module_init(bigmem_init);
-module_exit(bigmem_exit);
+module_init(req_recovery_init);
+module_exit(req_recovery_exit);
