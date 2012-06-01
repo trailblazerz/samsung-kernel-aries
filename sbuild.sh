@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sema_ver="Semaphore_ICS_1.2.2_Vibrant"
+sema_ver="Semaphore_ICS_1.2.2s_Vibrant"
 
 export KBUILD_BUILD_VERSION="1"
 export LOCALVERSION="-"`echo $sema_ver`
@@ -16,15 +16,11 @@ find /home/juston/CM9 -name '*.ko' -exec cp -v {} /home/juston/CM9/kernel/samsun
 
 make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm -j8 zImage
 
-<<<<<<< HEAD
-cp arch/arm/boot/zImage /home/juston/CM9/kernel/samsung/stock/ics-ramdisk/cwm/boot.img
-=======
-cd arch/arm/boot
-tar cvf `echo $sema_ver`.tar zImage
-cd ../../../
+#cd arch/arm/boot
+#tar cvf `echo $sema_ver`.tar zImage
+#cd ../../../
 
-cp arch/arm/boot/zImage ../ics-ramdisk/cwm/boot.img
->>>>>>> 04940223fdb1b03b70072669c996008fe2a6c701
+cp arch/arm/boot/zImage /home/juston/CM9/kernel/samsung/stock/ics-ramdisk/cwm/boot.img
 
 cd /home/juston/CM9/kernel/samsung/stock/ics-ramdisk/cwm
 
