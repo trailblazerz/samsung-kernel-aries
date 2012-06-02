@@ -2,7 +2,7 @@
 
 sema_ver="Semaphore_ICS_1.2.2s_Vibrant"
 
-export KBUILD_BUILD_VERSION="4"
+export KBUILD_BUILD_VERSION="5"
 export LOCALVERSION="-"`echo $sema_ver`
 
 #make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm aries_vibrantmtd_defconfig

@@ -303,6 +303,10 @@ module_param_string(nvram_path, nvram_path, MOD_PARAM_PATHLEN, 0);
 uint dhd_watchdog_ms = 10;
 module_param(dhd_watchdog_ms, uint, 0);
 
+/*PM FAST Mode Toggle */
+uint uiFastWifi = 0;
+module_param(uiFastWifi, uint, 0664);
+
 #if defined(DHD_DEBUG)
 /* Console poll interval */
 uint dhd_console_ms = 0;
@@ -523,11 +527,11 @@ static void dhd_set_packet_filter(int value, dhd_pub_t *dhd)
 #if defined(CONFIG_HAS_EARLYSUSPEND)
 static int dhd_set_suspend(int value, dhd_pub_t *dhd)
 {
-#ifndef CONFIG_BCMDHD_PMFAST
-	int power_mode = PM_FAST;
-#else
-	int power_mode = PM_MAX;
-#endif
+	if (uiFastWifi == 1) {
+		int power_mode = PM_FAST;
+	} else {
+		int power_mode = PM_MAX;
+	}
 	/* wl_pkt_filter_enable_t	enable_parm; */
 	char iovbuf[32];
 	int bcn_li_dtim = 3;
