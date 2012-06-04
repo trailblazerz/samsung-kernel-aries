@@ -845,15 +845,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 		case 8000:
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x2F00);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x3126);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0100);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
@@ -863,15 +859,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x1F00);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x86C2);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E0);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00e5);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00e5);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -880,15 +872,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x1F00);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x3126);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0100);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -897,15 +885,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x1900);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0xE23E);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0100);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -914,15 +898,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x0F00);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x86C2);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E0);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E5);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E5);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -931,15 +911,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x0F00);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x3126);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0100);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -948,15 +924,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x0C00);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0xE23E);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0100);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -965,15 +937,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x0700);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x86C2);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E0);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E5);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x00E5);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
@@ -982,15 +950,11 @@ static int configure_clock(struct snd_soc_codec *codec)
 			wm8994_write(codec, WM8994_FLL1_CONTROL_2, 0x0700);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_3, 0x3126);
 			wm8994_write(codec, WM8994_FLL1_CONTROL_5, 0x0C88);
-<<<<<<< HEAD
 /*#ifdef CONFIG_PHONE_ARIES_CDMA
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0100);
 #else*/
 			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
 /*#endif*/
-=======
-			wm8994_write(codec, WM8994_FLL1_CONTROL_4, 0x0105);
->>>>>>> 40c3855... wm8994: fixes for cdma in-call volume and mic gain
 			wm8994_write(codec, WM8994_FLL1_CONTROL_1,
 				WM8994_FLL1_FRACN_ENA | WM8994_FLL1_ENA);
 			break;
