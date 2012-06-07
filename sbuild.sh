@@ -16,9 +16,10 @@ find /home/juston/CM9 -name '*.ko' -exec cp -v {} /home/juston/CM9/kernel/samsun
 
 make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm -j8 zImage
 
-#cd arch/arm/boot
-#tar cvf `echo $sema_ver`.tar zImage
-#cd ../../../
+cd arch/arm/boot
+tar cvf `echo $sema_ver`.tar zImage
+cp $sema_ver.tar /home/juston/CM9/kernel/samsung/stock/ics-ramdisk
+cd ../../../
 
 cp arch/arm/boot/zImage /home/juston/CM9/kernel/samsung/stock/ics-ramdisk/cwm/boot.img
 
