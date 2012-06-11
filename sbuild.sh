@@ -1,5 +1,7 @@
 #!/bin/bash
 
+START=$(date +%s)
+
 sema_ver="Semaphore_ICS_1.2.2s_Vibrant"
 
 export KBUILD_BUILD_VERSION="10"
@@ -15,7 +17,7 @@ make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/
 
 cd arch/arm/boot
 tar cvf `echo $sema_ver`.tar zImage
-cp $sema_ver.tar /home/juston/CM9/kernel/samsung/stock/ics-ramdisk
+mv $sema_ver.tar /home/juston/CM9/kernel/samsung/stock/ics-ramdisk
 cd ../../../
 
 cp arch/arm/boot/zImage /home/juston/CM9/kernel/samsung/stock/ics-ramdisk/cwm/boot.img
@@ -26,4 +28,10 @@ zip -r `echo $sema_ver`.zip *
 
 mv  `echo $sema_ver`.zip ../
 
-
+END=$(date +%s)
+ELAPSED=$((END - START))
+E_MIN=$((ELAPSED / 60))
+E_SEC=$((ELAPSED - E_MIN * 60))
+printf "Time Elapsed: "
+[ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
+printf "%d sec(s)\n" $E_SEC
