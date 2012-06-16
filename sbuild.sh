@@ -2,24 +2,26 @@
 
 START=$(date +%s)
 
-sema_ver="Semaphore_ICS_1.2.2s_Vibrant"
+sema_ver="Semaphore_ICS_1.2.4s_Vibrant"
 
-export KBUILD_BUILD_VERSION="10"
+export KBUILD_BUILD_VERSION=""
 export LOCALVERSION="-"`echo $sema_ver`
 
 #make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm vibrant_sema_defconfig
 
-make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/gcc-linaro-arm-linux-gnueabihf/bin/arm-linux-gnueabihf- ARCH=arm vibrant_sema_defconfig
+make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/gcc-linaro-arm-linux-gnueabihf-2012.05-20120523_linux/bin/arm-linux-gnueabihf- ARCH=arm vibrant_sema_defconfig
+
+#kernel/drivers/misc/fsa9480.ko
 
 #make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm -j8 modules
 
-make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/gcc-linaro-arm-linux-gnueabihf/bin/arm-linux-gnueabihf- ARCH=arm -j8 modules
+make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/gcc-linaro-arm-linux-gnueabihf-2012.05-20120523_linux/bin/arm-linux-gnueabihf- ARCH=arm -j8 modules
 
 find /home/juston/CM9 -name '*.ko' -exec cp -v {} /home/juston/CM9/kernel/samsung/stock/ics-ramdisk/ics_combo/files/modules \;
 
 #make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm -j8 zImage
 
-make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/gcc-linaro-arm-linux-gnueabihf/bin/arm-linux-gnueabihf- ARCH=arm -j8 zImage
+make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/gcc-linaro-arm-linux-gnueabihf-2012.05-20120523_linux/bin/arm-linux-gnueabihf- ARCH=arm -j8 zImage
 
 cd arch/arm/boot
 tar cvf `echo $sema_ver`.tar zImage
