@@ -2,9 +2,9 @@
 
 START=$(date +%s)
 
-sema_ver="Semaphore_ICS_1.2.4s_Vibrant"
+sema_ver="Semaphore_1.2.5s_Vibrant"
 
-export KBUILD_BUILD_VERSION="3"
+export KBUILD_BUILD_VERSION="1"
 export LOCALVERSION="-"`echo $sema_ver`
 
 #make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm vibrant_sema_defconfig
