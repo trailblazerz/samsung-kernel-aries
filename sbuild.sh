@@ -4,7 +4,7 @@ START=$(date +%s)
 
 sema_ver="Semaphore_1.2.6s_Vibrant"
 
-export KBUILD_BUILD_VERSION="1"
+export KBUILD_BUILD_VERSION="2"
 export LOCALVERSION="-"`echo $sema_ver`
 
 cp /home/juston/Desktop/built-in.o drivers/misc/samsung_modemctl
