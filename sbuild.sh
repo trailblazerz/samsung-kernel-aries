@@ -7,7 +7,7 @@ sema_ver="Semaphore_1.2.6s_Vibrant"
 export KBUILD_BUILD_VERSION="2"
 export LOCALVERSION="-"`echo $sema_ver`
 
-cp /home/juston/Desktop/built-in.o drivers/misc/samsung_modemctl
+#cp /home/juston/Desktop/built-in.o drivers/misc/samsung_modemctl
 
 #make CROSS_COMPILE=/home/juston/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- ARCH=arm vibrant_sema_defconfig
 
