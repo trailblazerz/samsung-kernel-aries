@@ -1,5 +1,7 @@
 #!/bin/bash
 
+START=$(date +%s)
+
 BASE_SEMA_VER="Semaphore_JB_2.0.8"
 
 case "$1" in
@@ -79,4 +81,11 @@ cd $CWM_DIR
 zip -r `echo $SEMA_VER`.zip *
 mv  `echo $SEMA_VER`.zip $OUTPUT_DIR$VARIANT"/"
 
+END=$(date +%s)
+ELAPSED=$((END - START))
+E_MIN=$((ELAPSED / 60))
+E_SEC=$((ELAPSED - E_MIN * 60))
+printf "Time Elapsed: "
+[ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
+printf "%d sec(s)\n" $E_SEC
 
