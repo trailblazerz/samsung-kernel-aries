@@ -32,15 +32,15 @@ SEMA_VER=$BASE_SEMA_VER$VER
 #export KBUILD_BUILD_VERSION="2"
 export LOCALVERSION="-"`echo $SEMA_VER`
 #export CROSS_COMPILE=/opt/toolchains/gcc-linaro-arm-linux-gnueabihf-2012.07-20120720_linux/bin/arm-linux-gnueabihf-
-export CROSS_COMPILE=/opt/toolchains/gcc-linaro-arm-linux-gnueabihf-2012.08-20120827_linux/bin/arm-linux-gnueabihf-
+export CROSS_COMPILE=/home/juston/cm10/gcc-linaro-arm-linux-gnueabihf-2012.08-20120827_linux/bin/arm-linux-gnueabihf-
 export ARCH=arm
 
 eval $(grep CONFIG_INITRAMFS_SOURCE .config)
 INIT_DIR=$CONFIG_INITRAMFS_SOURCE
-MODULES_DIR=`echo $INIT_DIR`files/modules
+MODULES_DIR=/home/juston/cm10/kernel/ics-ramdisk/jb_combo_v/files/modules
 KERNEL_DIR=`pwd`
-OUTPUT_DIR=/kernels/output/
-CWM_DIR=/kernels/ics-ramdisk/cwm/
+OUTPUT_DIR=~/cm10/kernel/output
+CWM_DIR=~/cm10/kernel/ics-ramdisk/cwm/
 
 echo "LOCALVERSION="$LOCALVERSION
 echo "CROSS_COMPILE="$CROSS_COMPILE
@@ -61,18 +61,18 @@ if [ "$2" = "s" ] ; then
 fi
 
 
-make -j4 modules
+make -j8 modules
 
 rm `echo $MODULES_DIR"/*"`
 find $KERNEL_DIR -name '*.ko' -exec cp -v {} $MODULES_DIR \;
 
-make -j4 zImage
+make -j8 zImage
 
 cd arch/arm/boot
 tar cvf `echo $SEMA_VER`.tar zImage
 mv `echo $SEMA_VER`.tar $OUTPUT_DIR$VARIANT
 echo "Moving to "$OUTPUT_DIR$VARIANT"/"
-cd ../../../
+cd ../../..
 
 cp arch/arm/boot/zImage $CWM_DIR"boot.img"
 cd $CWM_DIR
