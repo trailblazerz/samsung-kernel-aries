@@ -39,7 +39,7 @@ export ARCH=arm
 
 eval $(grep CONFIG_INITRAMFS_SOURCE .config)
 INIT_DIR=$CONFIG_INITRAMFS_SOURCE
-MODULES_DIR=/home/juston/cm10/kernel/ics-ramdisk/jb_combo_v/files/modules
+MODULES_DIR=`echo $INIT_DIR`files/modules
 KERNEL_DIR=`pwd`
 OUTPUT_DIR=/home/juston/cm10/kernel/output
 CWM_DIR=/home/juston/cm10/kernel/ics-ramdisk/cwm/
