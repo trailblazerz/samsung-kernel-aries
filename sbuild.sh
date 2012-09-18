@@ -2,7 +2,7 @@
 
 START=$(date +%s)
 
-BASE_SEMA_VER="Semaphore_JB_2.1.0"
+BASE_SEMA_VER="Semaphore_JB_2.1.1"
 
 case "$1" in
         galaxys)
