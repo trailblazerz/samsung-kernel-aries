@@ -31,7 +31,7 @@ fi
 
 SEMA_VER=$BASE_SEMA_VER$VER
 
-export KBUILD_BUILD_VERSION="2"
+export KBUILD_BUILD_VERSION="3"
 export LOCALVERSION="-"`echo $SEMA_VER`
 #export CROSS_COMPILE=/opt/toolchains/gcc-linaro-arm-linux-gnueabihf-2012.07-20120720_linux/bin/arm-linux-gnueabihf-
 export CROSS_COMPILE=/home/juston/cm10/gcc-linaro-arm-linux-gnueabihf-2012.08-20120827_linux/bin/arm-linux-gnueabihf-
