@@ -2,7 +2,7 @@
 
 START=$(date +%s)
 
-BASE_SEMA_VER="Semaphore_JB_2.1.2"
+BASE_SEMA_VER="Semaphore_JB_2.2.0"
 
 case "$1" in
         galaxys)
@@ -31,7 +31,7 @@ fi
 
 SEMA_VER=$BASE_SEMA_VER$VER
 
-export KBUILD_BUILD_VERSION="4"
+export KBUILD_BUILD_VERSION="1"
 export LOCALVERSION="-"`echo $SEMA_VER`
 export CROSS_COMPILE=/home/juston/cm10/gcc-linaro-arm-linux-gnueabihf-2012.09-20120921_linux/bin/arm-linux-gnueabihf-
 export ARCH=arm
